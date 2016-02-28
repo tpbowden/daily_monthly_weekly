@@ -1,6 +1,5 @@
 require "optparse"
 require "db_backup"
-require "pp"
 
 module DbBackup
   class Cli
