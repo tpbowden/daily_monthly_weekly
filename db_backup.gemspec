@@ -18,4 +18,5 @@ Gem::Specification.new do |s|
   s.add_development_dependency "rubocop", ">= 0.35"
   s.add_development_dependency "rspec", ">= 3.4"
   s.add_development_dependency "simplecov", ">= 0.11"
+  s.add_development_dependency "cucumber", ">= 2.0"
 end
