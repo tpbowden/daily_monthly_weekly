@@ -14,7 +14,7 @@ module DbBackup
     end
 
     def old_backups dir, number_to_keep
-      Dir[File.join(@backups_dir, dir, @output_extension)]
+      Dir[File.join(@backups_dir, dir, "*.#{@output_extension}")]
         .sort
         .reverse
         .drop(number_to_keep)
