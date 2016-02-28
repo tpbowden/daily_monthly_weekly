@@ -1,0 +1,29 @@
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
+Style/TrailingCommaInLiteral:
+  EnforcedStyleForMultiline: comma
+Style/TrailingCommaInArguments:
+  EnforcedStyleForMultiline: comma
+Style/NestedParenthesizedCalls:
+  Enabled: false
+Documentation:
+  Enabled: false
+Metrics/LineLength:
+  Max: 120
+Performance/RedundantMerge:
+  Enabled: false
+Style/SpaceInsideBlockBraces:
+  SpaceBeforeBlockParameters: false
+Style/MethodDefParentheses:
+  EnforcedStyle: require_no_parentheses
+Style/PredicateName:
+  NamePrefixBlacklist:
+    - is_
+Style/AndOr:
+  EnforcedStyle: conditionals
+Style/SpaceInsideHashLiteralBraces:
+  EnforcedStyle: no_space
+Style/BlockDelimiters:
+  EnforcedStyle: semantic
+Metrics/MethodLength:
+  Max: 5
