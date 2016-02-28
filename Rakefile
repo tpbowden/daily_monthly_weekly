@@ -8,8 +8,8 @@ Cucumber::Rake::Task.new "cucumber" do |t|
   t.cucumber_opts = "features --format progress"
 end
 
-task default: %i(
-  rubocop
-  rspec
-  cucumber
-)
+task default: [
+  :rubocop,
+  :rspec,
+  :cucumber,
+]
