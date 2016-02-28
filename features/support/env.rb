@@ -1,3 +1,6 @@
+require "simplecov"
+SimpleCov.start
+
 require "db_backup/runner"
 
 def backups_dir
