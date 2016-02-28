@@ -2,7 +2,7 @@ require "simplecov"
 SimpleCov.start
 
 require "tmpdir"
-require "db_backup/runner"
+require "db_backup"
 
 def backups_dir
   @backups_dir ||= Dir.mktmpdir
