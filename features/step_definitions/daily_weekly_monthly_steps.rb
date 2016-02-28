@@ -19,12 +19,12 @@ Given(/there are old (.+) backups/) do |period|
 end
 
 When "I run the backups" do
-  DbBackup.start("echo 'foo';", backups_dir:  backups_dir,
-                                day_of_week: @weekly_backup_day || 1,
-                                day_of_month: @monthly_backup_day || 1,
-                                days_to_keep: 3,
-                                weeks_to_keep: 3,
-                                months_to_keep: 3)
+  DailyWeeklyMonthly.start("echo 'foo';", backups_dir:  backups_dir,
+                                          day_of_week: @weekly_backup_day || 1,
+                                          day_of_month: @monthly_backup_day || 1,
+                                          days_to_keep: 3,
+                                          weeks_to_keep: 3,
+                                          months_to_keep: 3)
 end
 
 Then(/I can see a (.+) backup file/) do |period|

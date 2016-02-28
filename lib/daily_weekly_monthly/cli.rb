@@ -1,7 +1,7 @@
 require "optparse"
-require "db_backup"
+require "daily_weekly_monthly"
 
-module DbBackup
+module DailyWeeklyMonthly
   class Cli
     def initialize args
       @options = {}
@@ -11,7 +11,7 @@ module DbBackup
     end
 
     def call
-      DbBackup.start @command, @options
+      DailyWeeklyMonthly.start @command, @options
     end
 
     private
@@ -19,7 +19,7 @@ module DbBackup
     # rubocop : disable Metrics/MethodLength
     def parse args
       args.options do |opts|
-        opts.banner = "Usage: start_backup \"database backup command\" [options]"
+        opts.banner = "Usage: daily_weekly_monthly \"database backup command\" [options]"
         parse_dir(opts)
         parse_ext(opts)
         parse_week_day(opts)

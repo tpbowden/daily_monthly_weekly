@@ -2,6 +2,6 @@
 
 $LOAD_PATH.unshift File.expand_path("../../lib", __FILE__)
 
-require "db_backup/cli"
+require "daily_weekly_monthly/cli"
 
-DbBackup::Cli.new(ARGV).call
+DailyWeeklyMonthly::Cli.new(ARGV).call

@@ -1,8 +1,8 @@
 require "spec_helper"
 require "tmpdir"
-require "db_backup/creator"
+require "daily_weekly_monthly/creator"
 
-describe DbBackup::Creator do
+describe DailyWeeklyMonthly::Creator do
   let(:backup) { "some content" }
   let(:backups_dir) { Dir.mktmpdir }
   let(:ext) { "txt" }

@@ -1,7 +1,7 @@
-require "db_backup/processor"
-require "db_backup/downloader"
+require "daily_weekly_monthly/processor"
+require "daily_weekly_monthly/downloader"
 
-module DbBackup
+module DailyWeeklyMonthly
   class Runner
     DEFAULTS = {
       backups_dir: File.expand_path("~/backups"),

@@ -1,6 +1,6 @@
 require "fileutils"
 
-module DbBackup
+module DailyWeeklyMonthly
   class Cleaner
     def initialize backups_dir, output_extension
       @backups_dir = backups_dir

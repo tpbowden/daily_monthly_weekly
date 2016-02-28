@@ -1,7 +1,7 @@
 require "spec_helper"
-require "db_backup/processor"
+require "daily_weekly_monthly/processor"
 
-describe DbBackup::Processor do
+describe DailyWeeklyMonthly::Processor do
   let(:backup) { double :backup }
   let(:dir) { double :dir }
   let(:ext) { double :ext }
@@ -11,8 +11,8 @@ describe DbBackup::Processor do
   subject { described_class.new backup, dir, ext }
 
   before do
-    allow(DbBackup::Creator).to receive(:new).with(backup, dir, ext) { creator }
-    allow(DbBackup::Cleaner).to receive(:new).with(dir, ext) { cleaner }
+    allow(DailyWeeklyMonthly::Creator).to receive(:new).with(backup, dir, ext) { creator }
+    allow(DailyWeeklyMonthly::Cleaner).to receive(:new).with(dir, ext) { cleaner }
   end
 
   describe "#call" do

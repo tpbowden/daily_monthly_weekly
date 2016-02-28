@@ -1,7 +1,7 @@
 require "spec_helper"
-require "db_backup/cli"
+require "daily_weekly_monthly/cli"
 
-describe DbBackup::Cli do
+describe DailyWeeklyMonthly::Cli do
   describe "#call" do
     subject { described_class.new ARGV }
 
@@ -30,13 +30,13 @@ describe DbBackup::Cli do
       end
 
       it "passes the parsed arguments and command to DbBackup.start" do
-        expect(DbBackup).to receive(:start).with("some command", months_to_keep: 5,
-                                                                 weeks_to_keep: 3,
-                                                                 days_to_keep: 2,
-                                                                 day_of_month: 1,
-                                                                 output_extension: "foo",
-                                                                 day_of_week: 2,
-                                                                 backups_dir: "bar")
+        expect(DailyWeeklyMonthly).to receive(:start).with("some command", months_to_keep: 5,
+                                                                           weeks_to_keep: 3,
+                                                                           days_to_keep: 2,
+                                                                           day_of_month: 1,
+                                                                           output_extension: "foo",
+                                                                           day_of_week: 2,
+                                                                           backups_dir: "bar")
         subject.call
       end
     end

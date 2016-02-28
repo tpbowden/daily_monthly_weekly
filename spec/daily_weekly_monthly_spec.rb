@@ -1,14 +1,14 @@
 require "spec_helper"
-require "db_backup"
+require "daily_weekly_monthly"
 
-describe DbBackup do
+describe DailyWeeklyMonthly do
   describe ".start" do
     let(:runner) { double :runner }
     let(:command) { double :command }
     let(:options) { double :options }
 
     before do
-      allow(DbBackup::Runner).to receive(:new).with(command, options) { runner }
+      allow(DailyWeeklyMonthly::Runner).to receive(:new).with(command, options) { runner }
     end
 
     it "passes the arguments to the runner" do

@@ -1,19 +1,19 @@
 # frozen_string_literal: true
 $LOAD_PATH.unshift File.expand_path("../lib", __FILE__)
-require "db_backup/version"
+require "daily_weekly_monthly/version"
 
 Gem::Specification.new do |s|
-  s.name = "db_backup"
-  s.version = DbBackup::VERSION
+  s.name = "daily_weekly_monthly"
+  s.version = DailyWeeklyMonthly::VERSION
   s.date = "2016-02-28"
   s.summary = "Manage database backups"
   s.description = "Automatically manage daily, weekly and monthly database backups"
   s.authors = ["Tom Bowden"]
   s.files = `git ls-files`.split($RS)
   s.bindir = "bin"
-  s.executables = "start_backup"
+  s.executables = "daily_weekly_monthly"
   s.email = "tom.b1992@gmail.com"
-  s.homepage = "http://github.com/tpbowden/db_backup"
+  s.homepage = "http://github.com/tpbowden/daily_weekly_monthly"
   s.license = "MIT"
   s.required_ruby_version = ">= 2.0.0"
 

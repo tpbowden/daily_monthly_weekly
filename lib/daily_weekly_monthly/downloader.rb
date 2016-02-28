@@ -1,6 +1,6 @@
 require "English"
 
-module DbBackup
+module DailyWeeklyMonthly
   class Downloader
     def initialize backup_command
       @backup_command = backup_command

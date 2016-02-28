@@ -1,4 +1,4 @@
-Feature: Database backups
+Feature: Daily, weekly and monthly backups
 
   Scenario Outline: Creating new backups
     Given it is the correct day for <Period> backups

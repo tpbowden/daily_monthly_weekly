@@ -1,7 +1,7 @@
-require "db_backup/creator"
-require "db_backup/cleaner"
+require "daily_weekly_monthly/creator"
+require "daily_weekly_monthly/cleaner"
 
-module DbBackup
+module DailyWeeklyMonthly
   class Processor
     def initialize backup, backups_dir, output_extension
       @backup = backup

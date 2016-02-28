@@ -1,7 +1,7 @@
 require "spec_helper"
-require "db_backup/runner"
+require "daily_weekly_monthly/runner"
 
-describe DbBackup::Runner do
+describe DailyWeeklyMonthly::Runner do
   let(:command) { double :command }
   let(:downloader) { double :downloader }
   let(:backup) { double :backup }
@@ -18,9 +18,9 @@ describe DbBackup::Runner do
   subject { described_class.new command, options }
 
   before do
-    allow(DbBackup::Downloader).to receive(:new).with(command) { downloader }
+    allow(DailyWeeklyMonthly::Downloader).to receive(:new).with(command) { downloader }
     allow(downloader).to receive(:call) { backup }
-    allow(DbBackup::Processor).to receive(:new).with(backup, backups_dir, ext) { processor }
+    allow(DailyWeeklyMonthly::Processor).to receive(:new).with(backup, backups_dir, ext) { processor }
   end
 
   context "when the day of the month is backup day" do

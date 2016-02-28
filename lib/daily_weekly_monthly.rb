@@ -1,6 +1,6 @@
-require "db_backup/runner"
+require "daily_weekly_monthly/runner"
 
-module DbBackup
+module DailyWeeklyMonthly
   def self.start command, options
     Runner.new(command, options).call
   end

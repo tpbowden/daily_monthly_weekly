@@ -1,8 +1,8 @@
 require "spec_helper"
 require "tmpdir"
-require "db_backup/cleaner"
+require "daily_weekly_monthly/cleaner"
 
-describe DbBackup::Cleaner do
+describe DailyWeeklyMonthly::Cleaner do
   let(:backups_dir) { Dir.mktmpdir }
   let(:ext) { "txt" }
 

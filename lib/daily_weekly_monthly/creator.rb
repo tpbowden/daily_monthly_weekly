@@ -1,7 +1,7 @@
 require "fileutils"
 require "date"
 
-module DbBackup
+module DailyWeeklyMonthly
   class Creator
     def initialize backup, backups_dir, output_extension
       @backup = backup

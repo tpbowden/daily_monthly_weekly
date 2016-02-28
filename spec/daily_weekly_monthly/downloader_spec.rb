@@ -1,7 +1,7 @@
 require "spec_helper"
-require "db_backup/downloader"
+require "daily_weekly_monthly/downloader"
 
-describe DbBackup::Downloader do
+describe DailyWeeklyMonthly::Downloader do
   describe "#call" do
     context "when the command fails" do
       subject { described_class.new "commandThatAlwaysFails 2> /dev/null" }
