@@ -1,4 +1,5 @@
 require "spec_helper"
+require "tmpdir"
 require "db_backup/cleaner"
 
 describe DbBackup::Cleaner do
