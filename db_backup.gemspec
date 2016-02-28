@@ -3,7 +3,7 @@ $LOAD_PATH.unshift File.expand_path("../lib", __FILE__)
 require "db_backup/version"
 
 Gem::Specification.new do |s|
-  s.name = "simple_ca"
+  s.name = "db_backup"
   s.version = DbBackup::VERSION
   s.date = "2016-02-28"
   s.summary = "Manage database backups"
