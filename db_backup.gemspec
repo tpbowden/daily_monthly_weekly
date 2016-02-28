@@ -10,6 +10,8 @@ Gem::Specification.new do |s|
   s.description = "Automatically manage daily, weekly and monthly database backups"
   s.authors = ["Tom Bowden"]
   s.files = `git ls-files`.split($RS)
+  s.bindir = "bin"
+  s.executables = "start_backup"
   s.email = "tom.b1992@gmail.com"
   s.homepage = "http://github.com/tpbowden/db_backup"
   s.license = "MIT"
