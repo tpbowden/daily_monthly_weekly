@@ -17,5 +17,5 @@ deploy:
   on:
     tags: true
     all_branches: true
-    repo: tpbowden/db_backup
+    repo: tpbowden/daily_weekly_monthly
     rvm: 2.0.0
