@@ -12,8 +12,6 @@ engines:
     enabled: true
   rubocop:
     enabled: true
-  bundler-audit:
-    enabled: true
   reek:
     enabled: true
 ratings:
