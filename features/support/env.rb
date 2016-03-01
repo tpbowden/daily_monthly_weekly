@@ -1,5 +1,7 @@
 require "simplecov"
-SimpleCov.start
+SimpleCov.start do
+  coverage_dir "coverage/features"
+end
 
 require "tmpdir"
 require "daily_weekly_monthly"
