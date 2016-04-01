@@ -3,6 +3,8 @@ require "daily_weekly_monthly"
 
 module DailyWeeklyMonthly
   class Cli
+    OPTIONS = [:dir, :ext, :week_day, :month_day, :keep_days, :keep_weeks, :keep_months].freeze
+
     def initialize args
       @options = {}
       @command = parse args
@@ -16,21 +18,19 @@ module DailyWeeklyMonthly
 
     private
 
-    # rubocop : disable Metrics/MethodLength
     def parse args
       args.options do |opts|
         opts.banner = "Usage: daily_weekly_monthly \"database backup command\" [options]"
-        parse_dir(opts)
-        parse_ext(opts)
-        parse_week_day(opts)
-        parse_month_day(opts)
-        parse_keep_days(opts)
-        parse_keep_weeks(opts)
-        parse_keep_months(opts)
-        opts.parse!
+        parse_all_options(opts)
       end
-
       args
+    end
+
+    def parse_all_options opts
+      OPTIONS.each do |option|
+        send("parse_#{option}", opts)
+      end
+      opts.parse!
     end
 
     def parse_keep_months opts
