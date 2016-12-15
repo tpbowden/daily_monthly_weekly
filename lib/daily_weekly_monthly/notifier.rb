@@ -21,7 +21,11 @@ Backup failure
 #{exception.backtrace.join("\n")}
 EOF
       }
-      mail.delivery_method :smtp, address: @smtp_server, port: @smtp_port if @smtp_server && @smtp_port
+      if @smtp_server && @smtp_port
+        mail.delivery_method :smtp, address: @smtp_server,
+                                    port: @smtp_port,
+                                    enable_starttls_auto: false
+      end
       mail.deliver
     end
     # rubocop: enable all
