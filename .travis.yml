@@ -16,4 +16,4 @@ deploy:
     tags: true
     all_branches: true
     repo: tpbowden/daily_weekly_monthly
-    rvm: 2.0.0
+    rvm: 2.3.3
