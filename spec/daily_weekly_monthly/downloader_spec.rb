@@ -4,10 +4,10 @@ require "daily_weekly_monthly/downloader"
 describe DailyWeeklyMonthly::Downloader do
   describe "#call" do
     context "when the command fails" do
-      subject { described_class.new "commandThatAlwaysFails 2> /dev/null" }
+      subject { described_class.new "echo 'foo' && exit 1" }
 
       it "raises a runtime error" do
-        expect { subject.call }.to raise_error RuntimeError, "Failed to download backup"
+        expect { subject.call }.to raise_error RuntimeError, "Failed to download backup: foo\n"
       end
     end
 

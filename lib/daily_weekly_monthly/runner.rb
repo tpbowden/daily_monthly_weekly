@@ -1,5 +1,6 @@
 require "daily_weekly_monthly/processor"
 require "daily_weekly_monthly/downloader"
+require "daily_weekly_monthly/notifier"
 
 module DailyWeeklyMonthly
   class Runner
@@ -11,6 +12,9 @@ module DailyWeeklyMonthly
       days_to_keep: 7,
       weeks_to_keep: 5,
       months_to_keep: 12,
+      smtp_server: false,
+      smtp_port: false,
+      notify: false,
     }.freeze
 
     def initialize backup_command, options = {}
@@ -37,6 +41,9 @@ module DailyWeeklyMonthly
 
     def backup
       Downloader.new(@backup_command).call
+    rescue StandardError => e
+      Notifier.new(@options[:smtp_server], @options[:smtp_port]).call(e, @options[:notify]) if @options[:notify]
+      raise e
     end
   end
 end

@@ -3,7 +3,18 @@ require "daily_weekly_monthly"
 
 module DailyWeeklyMonthly
   class Cli
-    OPTIONS = [:dir, :ext, :week_day, :month_day, :keep_days, :keep_weeks, :keep_months].freeze
+    OPTIONS = [
+      :dir,
+      :ext,
+      :week_day,
+      :month_day,
+      :keep_days,
+      :keep_weeks,
+      :keep_months,
+      :smtp_server,
+      :smtp_port,
+      :notify,
+    ].freeze
 
     def initialize args
       @options = {}
@@ -36,6 +47,24 @@ module DailyWeeklyMonthly
     def parse_keep_months opts
       opts.on("-M n", "--months-to-keep=n", "Monthly backups to keep", OptionParser::DecimalInteger) do |n|
         @options[:months_to_keep] = n
+      end
+    end
+
+    def parse_smtp_server opts
+      opts.on("-s s", "--smtp-server=s", "SMTP server for notifications", String) do |s|
+        @options[:smtp_server] = s
+      end
+    end
+
+    def parse_smtp_port opts
+      opts.on("-p p", "--smtp-server=p", "SMTP port for notifications", OptionParser::DecimalInteger) do |p|
+        @options[:smtp_port] = p
+      end
+    end
+
+    def parse_notify opts
+      opts.on("-n s", "--notify=s", "Notification email address", String) do |s|
+        @options[:notify] = s
       end
     end
 

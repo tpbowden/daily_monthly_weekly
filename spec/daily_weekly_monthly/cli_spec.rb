@@ -25,6 +25,9 @@ describe DailyWeeklyMonthly::Cli do
           "-e", "foo",
           "-w", "2",
           "-d", "bar",
+          "-n", "me@example.com",
+          "-s", "smpt.example.com",
+          "-p", "25",
           "some", "command"
         ]
       end
@@ -36,7 +39,10 @@ describe DailyWeeklyMonthly::Cli do
                                                                            day_of_month: 1,
                                                                            output_extension: "foo",
                                                                            day_of_week: 2,
-                                                                           backups_dir: "bar")
+                                                                           backups_dir: "bar",
+                                                                           smtp_server: "smpt.example.com",
+                                                                           smtp_port: 25,
+                                                                           notify: "me@example.com")
         subject.call
       end
     end

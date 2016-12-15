@@ -27,6 +27,20 @@ When "I run the backups" do
                                           months_to_keep: 3)
 end
 
+When "I run the backup and it fails" do
+  begin
+    DailyWeeklyMonthly.start("exit 10;", backups_dir:  backups_dir,
+                                         day_of_week: @weekly_backup_day || 1,
+                                         day_of_month: @monthly_backup_day || 1,
+                                         days_to_keep: 3,
+                                         weeks_to_keep: 3,
+                                         months_to_keep: 3,
+                                         notify: "person@example.com")
+  rescue RuntimeError => e
+    @exception = e
+  end
+end
+
 Then(/I can see a (.+) backup file/) do |period|
   expect(File.exist?(File.join(backups_dir, period, "#{Date.today.iso8601}.pgdump.gz"))).to be true
 end
@@ -42,4 +56,8 @@ Then(/the old (.+) backups have been removed/) do |period|
     "2010-01-01.pgdump.gz",
     "#{Date.today.iso8601}.pgdump.gz",
   ]
+end
+
+Then "I have been notified of the failure" do
+  expect(Mail::TestMailer.deliveries.length).to eq 1
 end

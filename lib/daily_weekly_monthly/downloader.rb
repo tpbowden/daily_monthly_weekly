@@ -8,7 +8,7 @@ module DailyWeeklyMonthly
 
     def call
       result = `#{@backup_command}`
-      raise "Failed to download backup" unless $CHILD_STATUS == 0
+      raise "Failed to download backup: #{result}" unless $CHILD_STATUS.exitstatus.zero?
       result
     end
   end

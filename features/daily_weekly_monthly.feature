@@ -21,3 +21,8 @@ Feature: Daily, weekly and monthly backups
       | daily   |
       | weekly  |
       | monthly |
+
+  Scenario: Notifying a failed run
+    Given it is the correct day for daily backups
+    When I run the backup and it fails
+    Then I have been notified of the failure

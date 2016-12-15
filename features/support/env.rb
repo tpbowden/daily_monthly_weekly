@@ -6,6 +6,10 @@ end
 require "tmpdir"
 require "daily_weekly_monthly"
 
+Mail.defaults do
+  delivery_method :test
+end
+
 def backups_dir
   @backups_dir ||= Dir.mktmpdir
 end

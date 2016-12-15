@@ -18,7 +18,7 @@ describe DailyWeeklyMonthly::Cleaner do
 
     it "removes all files except the newest N from the target directory" do
       subject.call "weekly", 2
-      expect(Dir[File.join(backups_dir, "weekly", "*.#{ext}")].map { |f|
+      expect(Dir[File.join(backups_dir, "weekly", "*.#{ext}")].map {|f|
         File.basename(f)
       }).to match_array ["2020-01-01.txt", "2019-01-01.txt"]
     end

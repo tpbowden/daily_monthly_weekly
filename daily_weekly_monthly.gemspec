@@ -17,6 +17,8 @@ Gem::Specification.new do |s|
   s.license = "MIT"
   s.required_ruby_version = ">= 2.0.0"
 
+  s.add_dependency "mail", ">= 2.6"
+
   s.add_development_dependency "rake", ">= 10.4"
   s.add_development_dependency "rubocop", ">= 0.35"
   s.add_development_dependency "rspec", ">= 3.4"
