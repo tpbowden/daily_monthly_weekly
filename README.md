@@ -1,6 +1,6 @@
 # Daily Weekly Monthly
 
-[![Build Status](https://travis-ci.org/tpbowden/daily_monthly_weekly.svg?branch=master)](https://travis-ci.org/tpbowden/daily_monthly_weekly)
+[![Build Status](https://travis-ci.org/tpbowden/daily_weekly_monthly.svg?branch=master)](https://travis-ci.org/tpbowden/daily_weekly_monthly)
 
 Keep your data safe by backing up on a daily, weekly and monthly basis.
 
